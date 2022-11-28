@@ -10,5 +10,7 @@ Run the server
 `npm run dev`
 server will start at port 3000.
 
-To send a test VOIP push notification make a GET request to
-http://localhost:3000/send_test_notification
+To send a test VOIP push notification make a GET request to /send_test_notification rout with device_token query parameter.
+
+Example:
+http://localhost:3000/send_test_notification?device_token=796c917c540402b41d970a28f479a8a8b24ca7d44a9eb8d0210a730eea02df9f&caller_name=Yousuf&body=Bangladesh&handle=22222222
