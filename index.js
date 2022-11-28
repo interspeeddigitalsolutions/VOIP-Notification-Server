@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.send('VOIP push test')
 })
 
-app.get('/test', (req, res) => {
+app.get('/send_test_notification', (req, res) => {
     sendTestNotification()
         .then((response) => {
             res.send(response);
@@ -22,7 +22,7 @@ app.get('/test', (req, res) => {
             console.log(error);
             res.send("Server error. check console");
         })
-})
+});
 
 app.listen(port, () => {
   console.log(`Server app listening on port ${port}`)

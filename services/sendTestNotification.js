@@ -1,19 +1,16 @@
 var apn = require("apn");
 const { v4: uuidv4 } = require('uuid');
-var path = require('path');
+const { deviceToken, keyFilePath, keyId, teamId } = require("../appConfig");
 
 
 module.exports.sendTestNotification = () => (
     new Promise((resolve, reject) => {
         try {
-            const pathToP8File = path.join(appRoot, 'assets/AuthKey_62GR7M7CYC.p8' );
-            const deviceToken = "796c917c540402b41d970a28f479a8a8b24ca7d44a9eb8d0210a730eea02df9f"
-
             const options = {
                 token: {
-                    key: pathToP8File,
-                    keyId: '62GR7M7CYC',
-                    teamId: 'B6QU7BA2E4'
+                    key: keyFilePath,
+                    keyId: keyId,
+                    teamId: teamId
                 },
                 production: false
             };
